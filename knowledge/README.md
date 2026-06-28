@@ -21,6 +21,7 @@ It is for Jorge, the team, and future AI/Codex sessions to quickly understand co
 
 ## Current Manna / Fernando References
 
+- System manual: `SYSTEM-MANUAL.md`
 - Manna company profile: `companies/manna-snack-bars.md`
 - Fernando worker profile: `workers/fernando.md`
 - Fernando compensation rules: `compensation/manna-fernando-compensation.md`

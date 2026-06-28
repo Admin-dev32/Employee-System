@@ -8,6 +8,8 @@ This folder is for internal worker payment, commission, salary, bonus, and adjus
 
 Keep the system simple and readable. Do not add a database, admin panel, authentication, or complex tooling.
 
+Before making payment rule changes, read `../SYSTEM-MANUAL.md`.
+
 ## Current Compensation Rule Files
 
 | Company | Worker | File | Status |
