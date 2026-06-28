@@ -9,6 +9,7 @@ It is for Jorge, the team, and future AI/Codex sessions to quickly understand co
 - `companies/` — company profiles and company-level payment notes.
 - `workers/` — worker profiles and the reusable worker profile template.
 - `compensation/` — worker/company compensation rules, commission references, and the reusable compensation template.
+- `email-templates/` — reusable worker payment summary email templates and usage notes.
 
 ## Current Companies
 
@@ -28,6 +29,7 @@ It is for Jorge, the team, and future AI/Codex sessions to quickly understand co
 - Fernando commission calculator/reference: `compensation/manna-commission-calculator.md`
 - Fernando commission examples: `compensation/manna-commission-examples.md`
 - Payment rules index: `compensation/payment-rules-index.md`
+- Payment summary email template manual: `email-templates/payment-summary-email-template.md`
 
 ## How to update this system
 
@@ -48,6 +50,7 @@ It is for Jorge, the team, and future AI/Codex sessions to quickly understand co
 - Use `TODO` where information is unknown.
 - Do not copy payment rules from one company to another unless specifically approved.
 - Review and update relevant files when compensation rules, worker roles, or company policies change.
+- Payment summary emails must be filled from the active worker/company compensation files.
 
 ## Source Documents
 

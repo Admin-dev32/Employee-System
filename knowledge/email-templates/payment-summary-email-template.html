@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{email_title}}</title>
+
+  <style>
+    @media only screen and (max-width: 600px) {
+      .email-wrapper { padding: 18px 10px !important; }
+      .main-card { width: 100% !important; border-radius: 18px !important; }
+      .header-padding { padding: 26px 22px 24px !important; }
+      .body-padding { padding: 26px 22px 10px !important; }
+      .footer-padding { padding: 20px 22px 28px !important; }
+      .logo { max-width: 130px !important; width: 130px !important; }
+      .header-title { font-size: 25px !important; line-height: 1.2 !important; }
+      .header-text, .body-text { font-size: 15px !important; line-height: 1.6 !important; }
+      .payment-total { font-size: 42px !important; }
+      .mobile-small { font-size: 14px !important; }
+      .table-cell { padding: 14px 15px !important; }
+      .badge { font-size: 11px !important; padding: 7px 10px !important; }
+    }
+  </style>
+</head>
+
+<body style="margin:0; padding:0; background:#07070a; font-family:Arial, Helvetica, sans-serif; color:#ffffff;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" style="margin:0; padding:0; background:
+    radial-gradient(circle at top left, rgba(255,74,185,0.35), transparent 32%),
+    radial-gradient(circle at top right, rgba(0,205,255,0.28), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(255,190,70,0.20), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(139,92,255,0.22), transparent 28%),
+    linear-gradient(135deg, #050507 0%, #111118 45%, #050507 100%);">
+
+    <tr>
+      <td align="center" class="email-wrapper" style="padding:42px 14px;">
+
+        <table width="640" cellpadding="0" cellspacing="0" class="main-card" style="max-width:640px; width:640px; border-collapse:collapse; background:#ffffff; border-radius:26px; overflow:hidden; box-shadow:0 28px 80px rgba(0,0,0,0.48);">
+
+          <!-- Header -->
+          <tr>
+            <td class="header-padding" style="padding:36px 38px 30px; background:
+              radial-gradient(circle at 20% 10%, rgba(255,74,185,0.48), transparent 30%),
+              radial-gradient(circle at 90% 20%, rgba(0,205,255,0.40), transparent 28%),
+              radial-gradient(circle at 80% 90%, rgba(255,190,70,0.25), transparent 26%),
+              linear-gradient(135deg, #050507 0%, #15151d 65%, #08080d 100%);">
+
+              <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                <tr>
+                  <td align="left" style="vertical-align:middle;">
+                    <img class="logo" src="{{company_logo_url}}" alt="{{company_name}}" style="display:block; max-width:155px; width:155px; height:auto;">
+                  </td>
+
+                  <td align="right" style="vertical-align:middle;">
+                    <span class="badge" style="display:inline-block; padding:8px 12px; border-radius:999px; background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.18); color:#ffffff; font-size:12px; letter-spacing:0.6px; font-weight:bold;">
+                      {{payment_period_badge}}
+                    </span>
+                  </td>
+                </tr>
+              </table>
+
+              <h1 class="header-title" style="margin:34px 0 8px; color:#ffffff; font-size:31px; line-height:1.2; font-weight:900; letter-spacing:-0.5px;">
+                {{payment_summary_title}}
+              </h1>
+
+              <p class="header-text" style="margin:0; color:#dedee8; font-size:15px; line-height:1.6;">
+                Periodo: <strong>{{payment_period_label}}</strong> · {{payment_summary_subtitle}}
+              </p>
+
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td class="body-padding" style="padding:36px 38px 12px; background:#ffffff; color:#1b1b1f;">
+
+              <p class="body-text" style="margin:0 0 18px; font-size:16px; line-height:1.65; color:#28282f;">
+                Hola {{worker_name}},
+              </p>
+
+              <p class="body-text" style="margin:0 0 18px; font-size:16px; line-height:1.65; color:#28282f;">
+                {{intro_message}}
+              </p>
+
+              <p class="body-text" style="margin:0 0 22px; font-size:16px; line-height:1.65; color:#28282f;">
+                {{appreciation_message}}
+              </p>
+
+              <p class="body-text" style="margin:0 0 28px; font-size:16px; line-height:1.65; color:#28282f;">
+                {{review_request_message}}
+              </p>
+
+              <!-- Period Card -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:22px; border-collapse:collapse;">
+                <tr>
+                  <td style="padding:16px 18px; border-radius:16px; background:#111118; color:#ffffff;">
+                    <p style="margin:0; font-size:13px; text-transform:uppercase; letter-spacing:1px; color:#bfbfff; font-weight:bold;">
+                      Periodo de pago
+                    </p>
+                    <p style="margin:6px 0 0; font-size:20px; line-height:1.3; font-weight:900;">
+                      {{payment_period_label}}
+                    </p>
+                    <p style="margin:4px 0 0; font-size:13px; line-height:1.5; color:#cfcfe8;">
+                      {{payment_period_date_range}}
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Commission / Payment Items Table -->
+              <!-- Remove this full section if the worker has no event commissions or itemized payment rows. -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:separate; border-spacing:0; border:1px solid #e9e9f2; border-radius:18px; overflow:hidden; background:#ffffff;">
+
+                <tr>
+                  <td colspan="2" style="padding:18px 20px; background:linear-gradient(90deg, #111118, #252535); color:#ffffff;">
+                    <p style="margin:0; font-size:14px; font-weight:bold; letter-spacing:0.3px;">
+                      {{itemized_payment_section_title}}
+                    </p>
+                  </td>
+                </tr>
+
+                <!--
+                Repeat this row for each payment/commission item.
+                Pull amounts from the approved payment summary, not from guesses.
+
+                <tr>
+                  <td class="table-cell mobile-small" style="padding:16px 20px; border-bottom:1px solid #eeeeF4; color:#2a2a2f; font-size:15px;">{{client_or_event_name}}</td>
+                  <td class="table-cell mobile-small" align="right" style="padding:16px 20px; border-bottom:1px solid #eeeeF4; color:#111118; font-size:15px; font-weight:bold;">{{commission_or_payment_amount}}</td>
+                </tr>
+                -->
+
+                {{payment_item_rows}}
+
+              </table>
+
+              <!-- Breakdown -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:22px; border-collapse:separate; border-spacing:0; background:#f8f8fc; border-radius:18px; overflow:hidden; border:1px solid #e9e9f2;">
+
+                <!-- Remove this row if there are no commissions. -->
+                <tr>
+                  <td class="table-cell mobile-small" style="padding:17px 20px; color:#3a3a42; font-size:15px; border-bottom:1px solid #e5e5ee;">{{commission_total_label}}</td>
+                  <td class="table-cell mobile-small" align="right" style="padding:17px 20px; color:#111118; font-size:15px; font-weight:bold; border-bottom:1px solid #e5e5ee;">{{total_commissions}}</td>
+                </tr>
+
+                <!-- Remove this row if the worker has no fixed payment. -->
+                <tr>
+                  <td class="table-cell mobile-small" style="padding:17px 20px; color:#3a3a42; font-size:15px; border-bottom:1px solid #e5e5ee;">{{fixed_payment_label}}</td>
+                  <td class="table-cell mobile-small" align="right" style="padding:17px 20px; color:#111118; font-size:15px; font-weight:bold; border-bottom:1px solid #e5e5ee;">{{fixed_payment_amount}}</td>
+                </tr>
+
+                <!-- Remove this row if there is no approved bonus. -->
+                <tr>
+                  <td class="table-cell mobile-small" style="padding:17px 20px; color:#3a3a42; font-size:15px;">{{bonus_label}}</td>
+                  <td class="table-cell mobile-small" align="right" style="padding:17px 20px; color:#111118; font-size:15px; font-weight:bold;">{{bonus_amount}}</td>
+                </tr>
+
+              </table>
+
+              <!-- Total Payment -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:24px; border-collapse:collapse;">
+                <tr>
+                  <td style="padding:28px 24px; border-radius:22px; background:
+                    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.30), transparent 22%),
+                    linear-gradient(135deg, #ff4fb8 0%, #8b5cff 38%, #00c2ff 72%, #ffbf45 100%);
+                    text-align:center; color:#ffffff;">
+
+                    <p style="margin:0 0 8px; font-size:13px; text-transform:uppercase; letter-spacing:1.6px; font-weight:bold;">
+                      Total a Pagar
+                    </p>
+
+                    <p class="payment-total" style="margin:0; font-size:48px; line-height:1; font-weight:900; letter-spacing:-1px;">
+                      {{total_payment}}
+                    </p>
+
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Bonus Note -->
+              <!-- Remove this full section if there is no approved bonus note. -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:24px; border-collapse:collapse;">
+                <tr>
+                  <td style="padding:19px 20px; background:#111118; border-radius:17px; color:#ffffff;">
+                    <p class="body-text" style="margin:0; font-size:15px; line-height:1.65; color:#f2f2f7;">
+                      {{bonus_note}}
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Current Agreement Section -->
+              <!--
+              Pull this section from the worker's active compensation file.
+              Do not invent payment rules.
+              Do not copy one worker's agreement into another worker.
+              Do not mention fixed pay unless the active compensation file includes fixed pay.
+              Remove this section if no agreement summary is needed.
+              -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:28px; border-collapse:separate; border-spacing:0; border-radius:20px; overflow:hidden; border:1px solid #e9e9f2; background:#ffffff;">
+
+                <tr>
+                  <td style="padding:20px 22px; background:
+                    radial-gradient(circle at 15% 20%, rgba(255,74,185,0.20), transparent 28%),
+                    radial-gradient(circle at 90% 20%, rgba(0,205,255,0.18), transparent 26%),
+                    linear-gradient(135deg, #f8f8fc 0%, #ffffff 100%);">
+
+                    <p style="margin:0 0 6px; font-size:13px; color:#8b5cff; font-weight:bold; text-transform:uppercase; letter-spacing:1px;">
+                      {{agreement_section_label}}
+                    </p>
+
+                    <h2 style="margin:0; font-size:22px; line-height:1.3; color:#111118; font-weight:900;">
+                      {{agreement_section_title}}
+                    </h2>
+
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:20px 22px 6px; background:#ffffff;">
+
+                    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+
+                      <!--
+                      Repeat this row for each agreement/current contract rule.
+                      Pull this from the active worker compensation file only.
+
+                      <tr>
+                        <td valign="top" style="padding:0 0 14px; width:24px; color:#8b5cff; font-size:18px; font-weight:bold;">{{rule_number}}</td>
+                        <td style="padding:0 0 14px; color:#2a2a2f; font-size:15px; line-height:1.6;">
+                          {{agreement_rule_text}}
+                        </td>
+                      </tr>
+                      -->
+
+                      {{agreement_summary_rows}}
+
+                    </table>
+
+                  </td>
+                </tr>
+
+              </table>
+
+              <!-- Commission Reference Section -->
+              <!--
+              Remove this full section if the worker does not have commission stages or commission rates.
+              Pull rows only from the active compensation/calculator/formula files.
+              Do not invent commission percentages.
+              -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:22px; border-collapse:separate; border-spacing:0; border:1px solid #e9e9f2; border-radius:18px; overflow:hidden; background:#ffffff;">
+
+                <tr>
+                  <td colspan="4" style="padding:18px 20px; background:linear-gradient(90deg, #111118, #252535); color:#ffffff;">
+                    <p style="margin:0; font-size:14px; font-weight:bold; letter-spacing:0.3px;">
+                      {{commission_reference_title}}
+                    </p>
+                  </td>
+                </tr>
+
+                <tr style="background:#f8f8fc;">
+                  <td class="table-cell mobile-small" style="padding:14px 16px; color:#3a3a42; font-size:14px; font-weight:bold;">{{commission_stage_header}}</td>
+                  <td class="table-cell mobile-small" style="padding:14px 16px; color:#3a3a42; font-size:14px; font-weight:bold;">{{commission_sales_header}}</td>
+                  <td class="table-cell mobile-small" align="right" style="padding:14px 16px; color:#3a3a42; font-size:14px; font-weight:bold;">{{commission_tier_one_header}}</td>
+                  <td class="table-cell mobile-small" align="right" style="padding:14px 16px; color:#3a3a42; font-size:14px; font-weight:bold;">{{commission_tier_two_header}}</td>
+                </tr>
+
+                <!--
+                Repeat this row for each commission stage.
+                Pull from active worker compensation file.
+
+                <tr>
+                  <td class="table-cell mobile-small" style="padding:14px 16px; border-top:1px solid #eeeeF4; color:#111118; font-size:14px; font-weight:bold;">{{stage_name}}</td>
+                  <td class="table-cell mobile-small" style="padding:14px 16px; border-top:1px solid #eeeeF4; color:#2a2a2f; font-size:14px;">{{stage_sales_count}}</td>
+                  <td class="table-cell mobile-small" align="right" style="padding:14px 16px; border-top:1px solid #eeeeF4; color:#2a2a2f; font-size:14px;">{{stage_tier_one_rate}}</td>
+                  <td class="table-cell mobile-small" align="right" style="padding:14px 16px; border-top:1px solid #eeeeF4; color:#2a2a2f; font-size:14px;">{{stage_tier_two_rate}}</td>
+                </tr>
+                -->
+
+                {{commission_reference_rows}}
+
+              </table>
+
+              <p class="body-text" style="margin:28px 0 18px; font-size:16px; line-height:1.65; color:#28282f;">
+                {{closing_message}}
+              </p>
+
+              <p class="body-text" style="margin:0 0 10px; font-size:16px; line-height:1.65; color:#28282f;">
+                Saludos,<br>
+                <strong>{{sender_name}}</strong>
+              </p>
+
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td class="footer-padding" style="padding:22px 38px 30px; background:#ffffff;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #eeeeF4;">
+                <tr>
+                  <td align="center" style="padding-top:18px; color:#8a8a96; font-size:12px; line-height:1.5;">
+                    {{footer_text}}<br>
+                    Periodo: {{payment_period_label}} · Diseño optimizado para celular
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+
+  </table>
+
+</body>
+</html>

@@ -10,6 +10,8 @@ Keep the system simple and readable. Do not add a database, admin panel, authent
 
 Before making payment rule changes, read `../SYSTEM-MANUAL.md`.
 
+Before sending a payment summary email, read the correct compensation file and email template manual.
+
 ## Current Compensation Rule Files
 
 | Company | Worker | File | Status |

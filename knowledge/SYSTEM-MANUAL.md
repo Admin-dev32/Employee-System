@@ -76,6 +76,16 @@ Current files:
 - `compensation-template.md` — reusable template to copy when adding a future compensation plan.
 - `payment-rules-index.md` — index of active and future payment rule files.
 
+### `knowledge/email-templates/`
+
+- Stores reusable payment summary email templates.
+- Templates must be filled from active worker/company compensation files.
+
+Current files:
+
+- `payment-summary-email-template.html` — reusable premium/mobile-friendly HTML email template.
+- `payment-summary-email-template.md` — instructions for safely filling the email template.
+
 ## 4. Current Active Worker: Fernando
 
 Fernando is currently the first active worker profile for Manna Snack Bars.
@@ -242,6 +252,18 @@ Reusable prompt:
 - Always preserve source notes when the old source is different from the current active rule.
 - Always update all linked files when a rule appears in more than one place.
 - Always leave TODO when something is unknown.
+
+## Payment Summary Email Templates
+
+Payment summary emails are reusable internal email templates for worker payment summaries.
+
+- Use `knowledge/email-templates/payment-summary-email-template.html` as the reusable HTML template.
+- Use `knowledge/email-templates/payment-summary-email-template.md` for instructions before filling the template.
+- The template must not be person-specific.
+- The current agreement section must be pulled from the worker's active compensation file.
+- Fernando's information is used only when generating Fernando's payment email.
+- Missing information should be marked TODO or confirmed with Jorge.
+- Do not hardcode fixed pay, commission stages, bonuses, or worker-specific agreement rules unless generating a real email from that worker's active compensation file.
 
 ## 17. Missing Information / TODOs
 
